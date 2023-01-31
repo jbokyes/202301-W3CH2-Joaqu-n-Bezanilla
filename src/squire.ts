@@ -12,6 +12,6 @@ export class Squire extends Character {
     public master: Fighter
   ) {
     super(name, family, age, 'squire');
-    this.message = 'Soy un escudero';
+    this.message = 'Soy un loser';
   }
 }
