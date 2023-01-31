@@ -1,50 +1,14 @@
-export class Character {
-  public lifestate: boolean;
-  constructor(public name: string, public family: string, public age: number) {
-    this.name = name;
-    this.age = age;
-    this.family = family;
-    this.lifestate = true;
-  }
+type CharacterMin = {
+  name: string;
+  family: string;
+  age: number;
+  category: 'king' | 'fighter' | 'counselor' | 'squire';
+};
 
-  greetings() {
-    console.log(`Hola soy ${this.name} y tengo ${this.age}`); // Cambiar de clg a "asignar string"
-  }
-
-  kill() {
-    this.lifestate = false;
-  }
-}
-
-export class King extends Character {
-  constructor(
-    public name: string,
-    public family: string,
-    public age: number,
-    public lifestate: boolean,
-    public reigningAge: number
-  ) {
-    super(name, family, age, lifestate);
-  }
-
-  greetings() {
-    console.log('Primero pego, luego pregunto');
-  }
-}
-
-export class Fighter extends Character {
-  constructor(
-    public name: string,
-    public family: string,
-    public age: number,
-    public lifestate: boolean,
-    public weapon: string,
-    public skill: number
-  ) {
-    super(name, family, age, lifestate);
-  }
-
-  greetings() {
-    console.log('Primero pego y luego pregunto');
+export class Character implements CharacterMin {
+  static series = 'GoT';
+  _isAlive: boolean;
+  public get isAlive(): boolean {
+    return this._isAlive;
   }
 }
