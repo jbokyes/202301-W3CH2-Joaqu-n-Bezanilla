@@ -1,3 +1,4 @@
+/* eslint-disable max-params */
 /* eslint-disable no-unused-vars */
 import { Fighter } from './fighter';
 import { Character } from './character';
@@ -11,6 +12,6 @@ export class Squire extends Character {
     public master: Fighter
   ) {
     super(name, family, age, 'squire');
-    this.message = 'Soy un looser';
+    this.message = 'Soy un escudero';
   }
 }
