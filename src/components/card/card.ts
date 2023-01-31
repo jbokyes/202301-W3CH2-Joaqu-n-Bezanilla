@@ -5,7 +5,7 @@ import { Fighter } from '../../fighter';
 import { Counselor } from '../../counselor';
 import { Character } from '../../character';
 
-export class Header extends Component {
+export class Card extends Component {
   constructor(public selector: string) {
     super();
     this.template = this.createTemplate();
@@ -24,7 +24,7 @@ export class Header extends Component {
             <h2 class="character__name card-title h4">Nombre y familia</h2>
             <div class="character__info">
               <ul class="list-unstyled">
-                <li>Age: ${Character.age} años</li>
+                <li>Age: años</li>
                 <li>
                   Estado:
                   <i class="fas fa-thumbs-down"></i>
@@ -34,7 +34,7 @@ export class Header extends Component {
             </div>
             <div class="character__overlay">
               <ul class="list-unstyled">
-                <li>Años de reinado: X</li>
+                <li>Años de reinado: ${King.kingdomAge}</li>
                 <li>Arma: XXX</li>
                 <li>Destreza: X</li>
                 <li>Peloteo: X</li>
