@@ -1,8 +1,10 @@
+type Category = 'king' | 'fighter' | 'counselor' | 'squire';
+
 type CharacterMin = {
   name: string;
   family: string;
   age: number;
-  category: 'king' | 'fighter' | 'counselor' | 'squire';
+  category: Category;
 };
 
 export class Character implements CharacterMin {
@@ -10,5 +12,24 @@ export class Character implements CharacterMin {
   _isAlive: boolean;
   public get isAlive(): boolean {
     return this._isAlive;
+  }
+
+  protected message: string;
+  constructor(
+    public name: string,
+    public family: string,
+    public age: number,
+    public category: Category
+  ) {
+    this._isAlive = true;
+    this.message = '';
+  }
+
+  communicate() {
+    return this.message;
+  }
+
+  dead() {
+    this._isAlive = false;
   }
 }
